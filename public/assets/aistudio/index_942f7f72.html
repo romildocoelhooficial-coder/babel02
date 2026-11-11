@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Babel Ultra AI - Iron Man Edition 2026</title>
+<!-- Meta Tags Principais (SEO) -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Conecte-se com o mundo através da Babel. Soluções inteligentes em comunicação, tradução e aprendizado de idiomas. Acesse e conheça.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.babel.net.br/">
+
+<!-- Tags de Propriedade e Autoria -->
+<meta name="author" content="Romildo Coelho">
+<meta name="owner" content="Romildo Coelho">
+<meta name="copyright" content="Babel - Romildo Coelho">
+
+<!-- Open Graph / Facebook (Para compartilhar em redes sociais) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.babel.net.br/">
+<meta property="og:title" content="Babel | Comunicação e Idiomas Inteligentes">
+<meta property="og:description" content="Conecte-se com o mundo através da Babel. Soluções inteligentes em comunicação, tradução e aprendizado de idiomas.">
+<meta property="og:image" content="https://www.babel.net.br/assets/og-image.jpg"> <!-- Substitua pelo link de uma imagem de destaque do seu site -->
+
+<!-- Twitter Cards -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.babel.net.br/">
+<meta property="twitter:title" content="Babel | Comunicação e Idiomas Inteligentes">
+<meta property="twitter:description" content="Conecte-se com o mundo através da Babel. Soluções inteligentes em comunicação, tradução e aprendizado de idiomas.">
+<meta property="twitter:image" content="https://www.babel.net.br/assets/og-image.jpg">
+<style>
+:root {
+    --iron-red-dark: #120000;
+    --iron-red-mid: #3a0000;
+    --iron-gold: #ffb347;
+    --iron-gold-glow: rgba(255, 179, 71, 0.6);
+    --arc-cyan: #00f0ff;
+    --arc-cyan-glow: rgba(0, 240, 255, 0.6);
+    --glass-bg: rgba(18, 5, 5, 0.75);
+    --border-glow: rgba(255, 90, 0, 0.35);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at center, var(--iron-red-mid) 0%, var(--iron-red-dark) 40%, #050505 100%);
+    color: #fff6e5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* MALHA TECNOLÓGICA SEXTAVADA / GRID HUD */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(255, 100, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 100, 0, 0.04) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center;
+    animation: gridPulse 8s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes gridPulse {
+    0% { opacity: 0.5; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.02); }
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 2px solid var(--border-glow);
+    border-radius: 32px;
+    padding: 35px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 
+        0 25px 60px rgba(0, 0, 0, 0.8),
+        0 0 50px rgba(255, 50, 0, 0.15),
+        inset 0 0 40px rgba(255, 100, 0, 0.05);
+    overflow: hidden;
+}
+
+/* LINHA SCANNER LASER */
+.container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.05), transparent);
+    transform: skewX(-25deg);
+    animation: scanline 6s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scanline {
+    0% { left: -150%; }
+    100% { left: 150%; }
+}
+
+/* CAIXA DE BOAS-VINDAS ESTILO HUD FRONTAL */
+.welcome-box {
+    background: rgba(30, 0, 0, 0.6);
+    border: 1px solid rgba(255, 179, 71, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(255, 70, 0, 0.1);
+}
+
+.welcome-title {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--iron-gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px var(--iron-gold-glow);
+    margin-bottom: 8px;
+}
+
+.welcome-sub {
+    color: #ffdcb0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.name-input-area {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.name-input-area input {
+    background: #090202;
+    border: 1.5px solid rgba(255, 179, 71, 0.4);
+    padding: 12px 16px;
+    border-radius: 12px;
+    color: #fff;
+    font-weight: 600;
+    outline: none;
+    width: 250px;
+    transition: 0.3s;
+}
+
+.name-input-area input:focus {
+    border-color: var(--arc-cyan);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+
+/* REATOR ARC REESTILIZADO */
+.arc-reactor-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+#orb {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffffff 0%, #a6f6ff 20%, #00a2ff 50%, #001133 90%);
+    border: 5px solid rgba(0, 240, 255, 0.5);
+    box-shadow: 
+        0 0 40px rgba(0, 240, 255, 0.6),
+        inset 0 0 30px rgba(0, 0, 0, 0.8);
+    position: relative;
+    transition: all 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ANÉIS DO REATOR */
+#orb::before {
+    content: '';
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 3px dashed rgba(255, 255, 255, 0.6);
+    animation: rotateClockwise 12s linear infinite;
+}
+
+#orb::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px dotted var(--iron-gold);
+    animation: rotateCounter 6s linear infinite;
+}
+
+@keyframes rotateClockwise {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rotateCounter {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+/* ESTADOS DINÂMICOS DO REATOR */
+#orb.listening {
+    animation: pulseListen 1s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+    border-color: #00ff66;
+    background: radial-gradient(circle, #ffffff 0%, #ccffdd 20%, #00ff66 50%, #002205 90%);
+    box-shadow: 0 0 50px rgba(0, 255, 102, 0.8);
+}
+
+#orb.speaking {
+    animation: pulseSpeak 0.5s ease-in-out infinite alternate;
+    border-color: var(--iron-gold);
+    background: radial-gradient(circle, #ffffff 0%, #ffe6cc 20%, #ff8800 50%, #220800 90%);
+    box-shadow: 0 0 60px rgba(255, 136, 0, 0.8);
+}
+
+@keyframes pulseListen {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.06); }
+}
+
+@keyframes pulseSpeak {
+    0% { transform: scale(0.97); }
+    100% { transform: scale(1.12); }
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.6rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(255,255,255,0.4);
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--arc-cyan);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* BANDEIRAS DE IDIOMA */
+.flags {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.flag-box {
+    background: rgba(10, 2, 2, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 15px 25px;
+    text-align: center;
+    opacity: 0.35;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    min-width: 150px;
+}
+
+.flag-box.active {
+    opacity: 1;
+    transform: translateY(-5px);
+    border-color: var(--arc-cyan);
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.35);
+    background: rgba(0, 40, 60, 0.3);
+}
+
+.flag { font-size: 3.5rem; }
+.flag-label {
+    margin-top: 5px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* PAINEL DE CONTROLE INTEGRADO */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+button {
+    border: none;
+    padding: 14px 22px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.2);
+}
+
+#startBtn { background: linear-gradient(180deg, #ff9000, #b83600); border: 1px solid #ffaa44; }
+#stopBtn { background: linear-gradient(180deg, #ff3333, #8a0000); border: 1px solid #ff6666; }
+#repeatBtn { background: linear-gradient(180deg, #00d9ff, #0055b3); border: 1px solid #66e5ff; }
+#clearBtn { background: linear-gradient(180deg, #5c5c5c, #242424); border: 1px solid #888; }
+
+select {
+    padding: 14px 20px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 179, 71, 0.4);
+    background: #0f0303;
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: 1px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* TELA DE STATUS HOLOGRÁFICA */
+#status {
+    text-align: center;
+    padding: 15px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    color: #a6f3ff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+
+/* QUADRO GRÁFICO DE TRADUÇÃO */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.card {
+    background: rgba(10, 3, 3, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 22px;
+    position: relative;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.6);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 12px; height: 12px;
+    border-top: 2px solid var(--iron-gold);
+    border-left: 2px solid var(--iron-gold);
+}
+
+.label {
+    color: var(--iron-gold);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    min-height: 80px;
+    color: #ffffff;
+    word-break: break-word;
+}
+
+/* HISTÓRICO HUD */
+#history {
+    margin-top: 25px;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.chat {
+    background: rgba(20, 5, 5, 0.5);
+    border-left: 4px solid var(--arc-cyan);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-15px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.chat strong { color: var(--arc-cyan); font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; }
+.chat p { margin-top: 6px; font-size: 0.95rem; }
+
+.footer-tip { text-align: center; margin-top: 25px; color: var(--iron-gold); font-weight: 700; font-size: 0.9rem; }
+.copyright { margin-top: 20px; text-align: center; color: #666; font-size: 0.8rem; letter-spacing: 1px; }
+
+/* RESPONSIVIDADE */
+@media(max-width: 768px) {
+    .grid { grid-template-columns: 1fr; }
+    h1 { font-size: 1.9rem; }
+    .flag { font-size: 2.8rem; }
+    .flag-box { min-width: 110px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="welcome-box">
+        <div class="welcome-title">⚡ Babel Ultra AI — Jarvis Edition</div>
+        <div class="welcome-sub" id="welcomeText">Inicializando interface biométrica e matriz de tradução instantânea...</div>
+        <div class="name-input-area" id="nameArea">
+            <input type="text" id="userNameInput" placeholder="Identifique-se, Operador..." maxlength="25">
+            <button id="saveNameBtn" style="background: #ff7b00">Acessar</button>
+        </div>
+    </div>
+
+    <div class="arc-reactor-container">
+        <div id="orb"></div>
+    </div>
+
+    <h1>Babel Ultra AI</h1>
+    <div class="subtitle">Next-Gen Realtime Core Interface</div>
+
+    <div class="flags">
+        <div class="flag-box" id="flagPT">
+            <div class="flag">🇧🇷</div>
+            <div class="flag-label">PT-Br</div>
+        </div>
+        <div class="flag-box" id="flagEN">
+            <div class="flag">🇺🇸</div>
+            <div class="flag-label">English</div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button id="startBtn">🎙️ Iniciar Filtro</button>
+        <button id="stopBtn">⛔ Desativar</button>
+        <button id="repeatBtn">🔊 Replay Voice</button>
+        <button id="clearBtn">🧹 Flush Cache</button>
+        
+        <select id="modeSelect">
+            <option value="auto">🤖 AUTO DETECTAR COGNITIVO</option>
+            <option value="en-pt">🇺🇸 INGLÊS → 🇧🇷 PORTUGUÊS</option>
+            <option value="pt-en">🇧🇷 PORTUGUÊS → 🇺🇸 INGLÊS</option>
+        </select>
+    </div>
+
+    <div id="status">Núcleo online. Aguardando comandos de voz...</div>
+
+    <div class="grid">
+        <div class="card">
+            <div class="label">Áudio Capturado (Matriz)</div>
+            <div class="text" id="heardText">...</div>
+        </div>
+        <div class="card">
+            <div class="label">Saída de Tradução</div>
+            <div class="text" id="translatedText">...</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="label">Logs de Diagnóstico do Sistema</div>
+        <div class="text" style="font-size: 0.9rem; color: #ccbba2;">
+            • Motor Cross-Language ativado: Captura de fonemas em tempo real.<br>
+            • Validador de ruído ativo: Otimizado para isolamento vocal dinâmico.<br>
+            • Buffer preditivo inteligente: Identifica o idioma nas primeiras sílabas faladas.
+        </div>
+    </div>
+
+    <div id="history"></div>
+
+    <div class="footer-tip">⚡ Dica: O sistema alterna as chaves de escuta automaticamente no modo Auto Detectar.</div>
+    <div class="copyright">Matrix Code System v4.5 · Fish Audio TTS | <a href="/admin" style="color:#ffb347;text-decoration:none;">Painel Admin</a> | Powered by Romildo Coelho 2026</div>
+</div>
+
+<script>
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+if (!SpeechRecognition) {
+    alert('Seu navegador não suporta a API de reconhecimento avançada. Use o Google Chrome.');
+}
+
+const recognition = new SpeechRecognition();
+recognition.continuous = true;
+// INTERIM RESULTS ATIVADO: Essencial para pescar as palavras no exato milissegundo em que começam
+recognition.interimResults = true; 
+recognition.maxAlternatives = 5;
+
+// Inicialização padrão equilibrada globalmente
+recognition.lang = 'pt-BR'; 
+
+const orb = document.getElementById('orb');
+const startBtn = document.getElementById('startBtn');
+const stopBtn = document.getElementById('stopBtn');
+const repeatBtn = document.getElementById('repeatBtn');
+const clearBtn = document.getElementById('clearBtn');
+const heardText = document.getElementById('heardText');
+const translatedText = document.getElementById('translatedText');
+const statusEl = document.getElementById('status');
+const historyEl = document.getElementById('history');
+const modeSelect = document.getElementById('modeSelect');
+const flagPT = document.getElementById('flagPT');
+const flagEN = document.getElementById('flagEN');
+const saveNameBtn = document.getElementById('saveNameBtn');
+const userNameInput = document.getElementById('userNameInput');
+const welcomeText = document.getElementById('welcomeText');
+const nameArea = document.getElementById('nameArea');
+
+let isRunning = false;
+let lastEnglishPhrase = '';
+let currentTargetLang = 'en';
+
+// Termos fonéticos de gatilho imediato para chaveamento instantâneo
+const ptTriggers = ['oi', 'olá', 'tudo', 'bom', 'dia', 'noite', 'você', 'falar', 'português', 'obrigado', 'como', 'fala'];
+const enTriggers = ['hello', 'hi', 'good', 'morning', 'night', 'you', 'speak', 'english', 'thanks', 'thank', 'how', 'welcome'];
+
+function initializeUser() {
+    const savedName = localStorage.getItem('babelUserName');
+    if (savedName) {
+        welcomeText.innerHTML = `⚡ Diretrizes prontas, comandante <b>${savedName}</b>.<br>Sistemas de tradução bi-direcional operando em capacidade máxima.`;
+        nameArea.style.display = 'none';
+    }
+}
+
+saveNameBtn.addEventListener('click', () => {
+    const name = userNameInput.value.trim();
+    if (!name) return;
+    localStorage.setItem('babelUserName', name);
+    welcomeText.innerHTML = `⚡ Registro biométrico aceito. Seja bem-vindo, <b>${name}</b>.`;
+    nameArea.style.display = 'none';
+    speak(`Interface inicializada. Bem-vindo, ${name}`, 'pt');
+});
+
+// ========== FISH AUDIO TTS (via backend) ==========
+let currentAudio = null;
+
+function stopCurrentAudio() {
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.src = '';
+        currentAudio = null;
+    }
+}
+
+function activateFlag(lang) {
+    flagPT.classList.remove('active');
+    flagEN.classList.remove('active');
+    if (lang === 'pt') flagPT.classList.add('active');
+    if (lang === 'en') flagEN.classList.add('active');
+}
+
+// ALGORITMO PREDITIVO AVANÇADO DE IDIOMA EM TEMPO REAL
+function advancedDetectLanguage(text) {
+    if (modeSelect.value === 'en-pt') return 'en';
+    if (modeSelect.value === 'pt-en') return 'pt';
+
+    const cleanText = text.toLowerCase().trim();
+    const words = cleanText.split(' ');
+    
+    let ptPoints = 0;
+    let enPoints = 0;
+
+    words.forEach(word => {
+        if (ptTriggers.includes(word)) ptPoints += 4;
+        if (enTriggers.includes(word)) enPoints += 4;
+    });
+
+    if (/[ãõçáéíóúâêôà]/g.test(cleanText)) ptPoints += 5;
+    if (/\b(the|of|and|to|in|is|it|that|was|he|for|on|with|as|at|by|an|this)\b/g.test(cleanText)) enPoints += 3;
+    if (/(ção|ções|mente|dade|nh|lh)/g.test(cleanText)) ptPoints += 3;
+    if (/(ing|ed|ly|tion|ness)\b/g.test(cleanText)) enPoints += 3;
+
+    return ptPoints >= enPoints ? 'pt' : 'en';
+}
+
+async function translateText(text, sourceLang) {
+    const target = sourceLang === 'pt' ? 'en' : 'pt';
+    try {
+        const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${sourceLang}&tl=${target}&dt=t&dj=1&q=${encodeURIComponent(text)}`;
+        const response = await fetch(url);
+        const data = await response.json();
+        return data.sentences ? data.sentences.map(s => s.trans).join(' ') : 'Erro de processamento.';
+    } catch (e) {
+        return 'Falha na ponte de comunicação com o servidor.';
+    }
+}
+
+/**
+ * Gera e toca áudio via API Fish Audio (proxy no backend).
+ * A chave e o voice ID ficam no painel admin (/admin).
+ */
+async function speak(text, lang) {
+    if (!text || !text.trim()) return;
+
+    stopCurrentAudio();
+    orb.className = 'speaking';
+    statusEl.innerText = '🔊 Gerando voz com Fish Audio...';
+
+    try {
+        const response = await fetch('/api/tts', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text: text.trim(), lang: lang || 'pt' })
+        });
+
+        if (!response.ok) {
+            let errMsg = 'Falha ao gerar áudio';
+            try {
+                const err = await response.json();
+                errMsg = err.error || errMsg;
+                if (err.detail) errMsg += ' — ' + err.detail;
+            } catch (_) {}
+            statusEl.innerText = '⚠️ ' + errMsg;
+            orb.className = isRunning ? 'listening' : '';
+            // Fallback silencioso: não usa browser TTS para manter consistência
+            return;
+        }
+
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+        const audio = new Audio(url);
+        currentAudio = audio;
+
+        return new Promise((resolve) => {
+            audio.onended = () => {
+                URL.revokeObjectURL(url);
+                currentAudio = null;
+                orb.className = isRunning ? 'listening' : '';
+                statusEl.innerText = isRunning
+                    ? '🎙️ Sensores de áudio operacionais. Pode falar...'
+                    : 'Núcleo online. Aguardando comandos de voz...';
+                resolve();
+            };
+            audio.onerror = () => {
+                URL.revokeObjectURL(url);
+                currentAudio = null;
+                orb.className = isRunning ? 'listening' : '';
+                statusEl.innerText = '⚠️ Erro ao reproduzir áudio.';
+                resolve();
+            };
+            audio.play().catch(() => {
+                orb.className = isRunning ? 'listening' : '';
+                statusEl.innerText = '⚠️ Não foi possível iniciar a reprodução.';
+                resolve();
+            });
+        });
+    } catch (e) {
+        console.error(e);
+        statusEl.innerText = '⚠️ Erro de rede ao chamar TTS: ' + e.message;
+        orb.className = isRunning ? 'listening' : '';
+    }
+}
+
+function addHistory(original, translated, detectedLang) {
+    const block = document.createElement('div');
+    block.className = 'chat';
+    const tag = detectedLang === 'pt' ? '🇧🇷 Origem: Português' : '🇺🇸 Origem: English';
+    block.innerHTML = `
+        <strong>${tag}</strong>
+        <p><b>Original:</b> ${original}</p>
+        <p style="color: #ffcc66;"><b>Traduzido:</b> ${translated}</p>
+    `;
+    historyEl.prepend(block);
+}
+
+// CAPTURA DO FLUXO DE RECONHECIMENTO
+recognition.onresult = async (event) => {
+    let interimTranscript = '';
+    let finalTranscript = '';
+
+    for (let i = event.resultIndex; i < event.results.length; ++i) {
+        if (event.results[i].isFinal) {
+            finalTranscript += event.results[i][0].transcript;
+        } else {
+            interimTranscript += event.results[i][0].transcript;
+        }
+    }
+
+    const currentAnalysis = finalTranscript || interimTranscript;
+    if (!currentAnalysis.trim()) return;
+
+    // Executa a detecção inteligente logo no início da fala (interim ou final)
+    const detectedLang = advancedDetectLanguage(currentAnalysis);
+    activateFlag(detectedLang);
+    
+    statusEl.innerText = `Análise de Espectro: Idioma identificado -> [${detectedLang.toUpperCase()}]`;
+    heardText.innerText = currentAnalysis;
+
+    // Se tivermos o resultado final consolidado do bloco de voz, traduzimos e falamos
+    if (finalTranscript) {
+        recognition.stop(); // Pausa a escuta temporariamente para evitar dar feedback à própria IA
+        
+        const translation = await translateText(finalTranscript, detectedLang);
+        translatedText.innerText = translation;
+        
+        addHistory(finalTranscript, translation, detectedLang);
+        
+        lastEnglishPhrase = detectedLang === 'pt' ? translation : finalTranscript;
+
+        // Falar a tradução gerada com a voz respectiva do idioma alvo
+        const targetVoiceLang = detectedLang === 'pt' ? 'en' : 'pt';
+        await speak(translation, targetVoiceLang);
+
+        if (isRunning) {
+            try { recognition.start(); } catch(e){}
+        }
+    }
+};
+
+startBtn.addEventListener('click', () => {
+    if (isRunning) return;
+    isRunning = true;
+    stopCurrentAudio();
+    
+    // Configuração mista dinâmica: força varredura adaptativa
+    if (modeSelect.value === 'auto') {
+        // Truque mestre: Configura para aceitar sotaques globais expandidos na varredura inicial
+        recognition.lang = 'pt-BR'; 
+    } else {
+        recognition.lang = modeSelect.value === 'pt-en' ? 'pt-BR' : 'en-US';
+    }
+
+    recognition.start();
+    orb.className = 'listening';
+    statusEl.innerText = '🎙️ Sensores de áudio operacionais. Pode falar...';
+});
+
+stopBtn.addEventListener('click', () => {
+    isRunning = false;
+    recognition.stop();
+    stopCurrentAudio();
+    orb.className = '';
+    statusEl.innerText = '⛔ Matriz de sensores offline.';
+});
+
+repeatBtn.addEventListener('click', async () => {
+    if (!lastEnglishPhrase) {
+        statusEl.innerText = '⚠️ Buffer vazio. Nenhuma frase gravada.';
+        return;
+    }
+    statusEl.innerText = '🔊 Reproduzindo última saída em inglês...';
+    await speak(lastEnglishPhrase, 'en');
+});
+
+clearBtn.addEventListener('click', () => {
+    heardText.innerText = '...';
+    translatedText.innerText = '...';
+    historyEl.innerHTML = '';
+    lastEnglishPhrase = '';
+    statusEl.innerText = '🧹 Cache do sistema limpo.';
+});
+
+recognition.onerror = (e) => {
+    if (e.error !== 'no-speech') {
+        statusEl.innerText = `⚠️ Ajustando frequência dos sensores... (${e.error})`;
+    }
+};
+
+recognition.onend = () => {
+    if (isRunning) {
+        // Auto-restart contínuo inteligente estilo Jarvis
+        setTimeout(() => { try { if (isRunning) recognition.start(); } catch(e){} }, 400);
+    }
+};
+
+initializeUser();
+</script>
+
+<script>
+// Bloqueio de inspeção padrão mantido conforme solicitado
+var _0xnoRight = '%3Cscript%3Edocument.addEventListener%28%27contextmenu%27%2C%20event%20%3D%3E%20event.preventDefault%28%29%29%3Bdocument.onkeydown%20%3D%20function%28e%29%20%7Bif%28e.keyCode%20%3D%3D%20123%20%7C%7C%20%28e.ctrlKey%20%26%26%20e.shiftKey%20%26%26%20%28e.keyCode%20%3D%3D%2073%20%7C%7C%20e.keyCode%20%3D%3D%2074%29%29%20%7C%7C%20%28e.ctrlKey%20%26%26%20e.keyCode%20%3D%3D%2085%29%29%20return%20false%3B%7D%3C/script%3E';
+document.write(decodeURIComponent(_0xnoRight));
+</script>
+
+</body>
+</html>

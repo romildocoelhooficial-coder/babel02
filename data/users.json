@@ -1,0 +1,20 @@
+[
+  {
+    "id": "usr_1",
+    "name": "Romildo Coelho",
+    "email": "romildo@babel.net.br",
+    "phone": "(11) 98765-4321",
+    "password": "123456",
+    "createdAt": "2026-11-07T00:01:34.248Z",
+    "role": "admin"
+  },
+  {
+    "id": "usr_2",
+    "name": "Tony Stark",
+    "email": "tony@starkindustries.com",
+    "phone": "(21) 99888-7766",
+    "password": "123456",
+    "createdAt": "2026-11-10T00:01:34.248Z",
+    "role": "user"
+  }
+]

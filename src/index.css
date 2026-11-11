@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@keyframes gridPulse {
+  0% { opacity: 0.35; transform: scale(1); }
+  100% { opacity: 0.8; transform: scale(1.02); }
+}
+
+@keyframes scanline {
+  0% { left: -150%; }
+  100% { left: 150%; }
+}
+
+@keyframes rotateClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateCounter {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes pulseListen {
+  0% { transform: scale(1); box-shadow: 0 0 35px rgba(0, 255, 102, 0.6); }
+  100% { transform: scale(1.08); box-shadow: 0 0 65px rgba(0, 255, 102, 0.95); }
+}
+
+@keyframes pulseSpeak {
+  0% { transform: scale(0.96); box-shadow: 0 0 40px rgba(255, 136, 0, 0.6); }
+  100% { transform: scale(1.14); box-shadow: 0 0 75px rgba(255, 136, 0, 0.95); }
+}
+
+.hud-grid {
+  background-image: 
+    linear-gradient(rgba(255, 100, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 100, 0, 0.05) 1px, transparent 1px);
+  background-size: 45px 45px;
+  animation: gridPulse 8s ease-in-out infinite alternate;
+}
+
+.arc-orb-listen {
+  animation: pulseListen 1s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+  border-color: #00ff66 !important;
+  background: radial-gradient(circle, #ffffff 0%, #ccffdd 20%, #00ff66 50%, #002205 90%) !important;
+}
+
+.arc-orb-speak {
+  animation: pulseSpeak 0.5s ease-in-out infinite alternate;
+  border-color: #ffb347 !important;
+  background: radial-gradient(circle, #ffffff 0%, #ffe6cc 20%, #ff8800 50%, #220800 90%) !important;
+}
+
+.ring-clockwise {
+  animation: rotateClockwise 12s linear infinite;
+}
+
+.ring-counter {
+  animation: rotateCounter 6s linear infinite;
+}
+
+.scanline-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.05), transparent);
+  transform: skewX(-25deg);
+  animation: scanline 6s linear infinite;
+  pointer-events: none;
+}

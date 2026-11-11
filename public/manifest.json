@@ -1,0 +1,32 @@
+{
+  "id": "/",
+  "name": "Babel Ultra AI - Tradutor de Voz",
+  "short_name": "Babel Ultra",
+  "description": "Tradutor de voz em tempo real PT-EN com Fish Audio TTS e HUD Arc Reactor.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#050505",
+  "theme_color": "#120000",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin - Babel Ultra AI | Fish Audio</title>
+<style>
+:root {
+  --bg: #0a0505;
+  --card: rgba(25, 8, 8, 0.92);
+  --gold: #ffb347;
+  --cyan: #00f0ff;
+  --border: rgba(255, 90, 0, 0.4);
+  --text: #fff6e5;
+  --muted: #a89080;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+body {
+  background: radial-gradient(circle at 30% 20%, #3a0000 0%, #120000 40%, #050505 100%);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+.card {
+  width: 100%;
+  max-width: 520px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+}
+h1 { font-size: 1.5rem; margin-bottom: 6px; color: var(--gold); }
+.sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 24px; }
+label { display: block; font-size: 0.85rem; color: var(--muted); margin: 14px 0 6px; }
+input, select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.4);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+input:focus, select:focus { outline: none; border-color: var(--cyan); }
+.btn {
+  display: inline-block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  background: linear-gradient(135deg, #c44, #a20);
+  color: white;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(255,80,0,0.35); }
+.btn.secondary { background: transparent; border: 1px solid var(--border); color: var(--gold); margin-top: 10px; }
+.btn.danger { background: #5a1010; margin-top: 10px; }
+.msg { margin-top: 16px; padding: 12px; border-radius: 10px; font-size: 0.9rem; display: none; }
+.msg.ok { display: block; background: rgba(0,180,100,0.15); border: 1px solid #0a8; color: #8f8; }
+.msg.err { display: block; background: rgba(180,0,0,0.2); border: 1px solid #a44; color: #faa; }
+.section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+.section h2 { font-size: 1.05rem; color: var(--cyan); margin-bottom: 8px; }
+.hint { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+.hidden { display: none !important; }
+.top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.top-bar a { color: var(--gold); text-decoration: none; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+  <!-- LOGIN -->
+  <div class="card" id="loginCard">
+    <h1>Painel Admin</h1>
+    <p class="sub">Babel Ultra AI · Fish Audio</p>
+    <label>Usuário</label>
+    <input type="text" id="loginUser" placeholder="admin" autocomplete="username">
+    <label>Senha</label>
+    <input type="password" id="loginPass" placeholder="••••••••" autocomplete="current-password">
+    <button class="btn" id="loginBtn">Entrar</button>
+    <div class="msg" id="loginMsg"></div>
+  </div>
+
+  <!-- CONFIG -->
+  <div class="card hidden" id="configCard">
+    <div class="top-bar">
+      <h1>Configuração Fish Audio</h1>
+      <a href="/">← Voltar ao app</a>
+    </div>
+    <p class="sub">API Key e IDs de voz ficam seguros no servidor.</p>
+
+    <label>API Key da Fish Audio</label>
+    <input type="password" id="fishApiKey" placeholder="Cole a chave (deixe em branco para manter a atual)">
+    <p class="hint">Obtenha em <a href="https://fish.audio" target="_blank" style="color:var(--cyan)">fish.audio</a> → API Keys</p>
+
+    <label>Model</label>
+    <select id="fishModel">
+      <option value="s2.1-pro-free">s2.1-pro-free (gratuito / testes)</option>
+      <option value="s2.1-pro">s2.1-pro (recomendado)</option>
+      <option value="s2-pro">s2-pro</option>
+      <option value="s1">s1 (legado)</option>
+    </select>
+
+    <label>Voice ID geral (reference_id)</label>
+    <input type="text" id="fishVoiceId" placeholder="ex: 9a9cf47702da476aa4629e2506d4a857">
+    <p class="hint">ID do modelo de voz no fish.audio. Usado se não houver ID por idioma.</p>
+
+    <label>Voice ID Português (opcional)</label>
+    <input type="text" id="fishVoiceIdPt" placeholder="Deixe vazio para usar o geral">
+
+    <label>Voice ID Inglês (opcional)</label>
+    <input type="text" id="fishVoiceIdEn" placeholder="Deixe vazio para usar o geral">
+
+    <div class="section">
+      <h2>Segurança do Admin</h2>
+      <label>Novo usuário admin (opcional)</label>
+      <input type="text" id="newAdminUser" placeholder="Deixe vazio para manter">
+      <label>Nova senha admin (mín. 6 caracteres)</label>
+      <input type="password" id="newAdminPass" placeholder="Deixe vazio para manter">
+    </div>
+
+    <button class="btn" id="saveBtn">Salvar configuração</button>
+    <button class="btn secondary" id="logoutBtn">Sair</button>
+    <div class="msg" id="configMsg"></div>
+  </div>
+
+<script>
+const loginCard = document.getElementById('loginCard');
+const configCard = document.getElementById('configCard');
+const loginMsg = document.getElementById('loginMsg');
+const configMsg = document.getElementById('configMsg');
+
+async function checkStatus() {
+  try {
+    const r = await fetch('/api/admin/status');
+    const d = await r.json();
+    if (d.loggedIn) {
+      showConfig();
+      loadConfig();
+    }
+  } catch (e) {}
+}
+
+async function doLogin() {
+  loginMsg.className = 'msg';
+  const user = document.getElementById('loginUser').value.trim();
+  const pass = document.getElementById('loginPass').value;
+  try {
+    const r = await fetch('/api/admin/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ user, pass })
+    });
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error || 'Falha no login');
+    showConfig();
+    loadConfig();
+  } catch (e) {
+    loginMsg.textContent = e.message;
+    loginMsg.className = 'msg err';
+  }
+}
+
+function showConfig() {
+  loginCard.classList.add('hidden');
+  configCard.classList.remove('hidden');
+}
+
+async function loadConfig() {
+  try {
+    const r = await fetch('/api/admin/config');
+    if (!r.ok) throw new Error('Sessão expirada');
+    const d = await r.json();
+    document.getElementById('fishApiKey').placeholder = d.fishApiKeySet
+      ? `Chave atual: ${d.fishApiKey}` : 'Cole a chave aqui';
+    document.getElementById('fishVoiceId').value = d.fishVoiceId || '';
+    document.getElementById('fishVoiceIdPt').value = d.fishVoiceIdPt || '';
+    document.getElementById('fishVoiceIdEn').value = d.fishVoiceIdEn || '';
+    document.getElementById('fishModel').value = d.fishModel || 's2.1-pro-free';
+  } catch (e) {
+    configMsg.textContent = e.message;
+    configMsg.className = 'msg err';
+  }
+}
+
+async function saveConfig() {
+  configMsg.className = 'msg';
+  const body = {
+    fishApiKey: document.getElementById('fishApiKey').value.trim(),
+    fishVoiceId: document.getElementById('fishVoiceId').value.trim(),
+    fishVoiceIdPt: document.getElementById('fishVoiceIdPt').value.trim(),
+    fishVoiceIdEn: document.getElementById('fishVoiceIdEn').value.trim(),
+    fishModel: document.getElementById('fishModel').value,
+    newAdminUser: document.getElementById('newAdminUser').value.trim(),
+    newAdminPass: document.getElementById('newAdminPass').value
+  };
+  try {
+    const r = await fetch('/api/admin/config', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error || 'Erro ao salvar');
+    configMsg.textContent = d.message || 'Salvo!';
+    configMsg.className = 'msg ok';
+    document.getElementById('fishApiKey').value = '';
+    document.getElementById('newAdminPass').value = '';
+    loadConfig();
+  } catch (e) {
+    configMsg.textContent = e.message;
+    configMsg.className = 'msg err';
+  }
+}
+
+async function doLogout() {
+  await fetch('/api/admin/logout', { method: 'POST' });
+  location.reload();
+}
+
+document.getElementById('loginBtn').addEventListener('click', doLogin);
+document.getElementById('loginPass').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+document.getElementById('saveBtn').addEventListener('click', saveConfig);
+document.getElementById('logoutBtn').addEventListener('click', doLogout);
+
+checkStatus();
+</script>
+</body>
+</html>

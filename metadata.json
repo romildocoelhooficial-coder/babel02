@@ -1,0 +1,10 @@
+{
+  "name": "Babel Ultra AI",
+  "description": "Tradutor de voz em tempo real PT-EN estilo HUD Arc Reactor com síntese vocal Fish Audio e suporte completo a PWA.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
